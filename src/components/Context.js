@@ -40,15 +40,9 @@ const ContextProvider = ({ children }) => {
       ];
 
       if (filterTexts.every(filterText => textsToCompare.includes(filterText))) {
-        return {
-          ...job,
-          show: true,
-        };
+        return { ...job, show: true };
       } else {
-        return {
-          ...job,
-          show: false,
-        };
+        return { ...job, show: false };
       }
     });
     setAllJobs(updatedJobs);

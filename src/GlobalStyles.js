@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`${css`
     --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 
     --ff-brand: 'Spartan', sans-serif;
-    --fs-global: 1.04em;
+    --fs-global: 0.97em;
     --fw-normal: 500;
     --fw-bold: 700;
 
@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`${css`
     font-weight: var(--fw-normal);
     background: var(--light-grayish-cyan-background);
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1000px) {
       font-size: var(---fs-global);
     }
   }

@@ -10,10 +10,21 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0.83em 1.39em;
-  margin-top: -8.5em;
+  margin-top: -8.3em;
   position: sticky;
-  top: 2em;
+  top: 1.67em;
   z-index: 2;
+
+  @media screen and (max-width: 1000px) {
+    margin-top: -5.5em;
+    padding: 0.42em 0.84em;
+  }
+
+  @media screen and (max-width: 789px) {
+    margin-top: -6em;
+    font-size: 0.83em;
+    margin-bottom: 3.5em;
+  }
 `;
 Wrapper.displayName = 'Wrapper';
 
