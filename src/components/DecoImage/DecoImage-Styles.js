@@ -7,3 +7,8 @@ export const Image = styled.img`
   transform: scale(1.05);
 `;
 Image.displayName = 'Image';
+
+export const Wrapper = styled.div`
+  overflow: hidden;
+`;
+Wrapper.displayName = 'Wrapper';

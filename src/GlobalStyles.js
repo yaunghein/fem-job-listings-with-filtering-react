@@ -12,6 +12,9 @@ const GlobalStyles = createGlobalStyle`${css`
     --fs-global: 1.04em;
     --fw-normal: 500;
     --fw-bold: 700;
+
+    --box-shadow: 0px 8px 24px rgba(91, 164, 164, 0.25);
+    --timing-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   * {
@@ -24,6 +27,7 @@ const GlobalStyles = createGlobalStyle`${css`
     font-family: var(--ff-brand);
     font-size: 1vw;
     font-weight: var(--fw-normal);
+    background: var(--light-grayish-cyan-background);
 
     @media screen and (max-width: 1200px) {
       font-size: var(---fs-global);

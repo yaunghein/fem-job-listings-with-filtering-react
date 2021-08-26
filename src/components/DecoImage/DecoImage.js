@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Section } from '../Global-Containers';
-import { Image } from './DecoImage-Styles';
+import { Image, Wrapper } from './DecoImage-Styles';
 import DecoImageDesktop from '../../images/bg-header-desktop.svg';
 import DecoImageMobile from '../../images/bg-header-mobile.svg';
 
@@ -22,7 +22,9 @@ const DecoImage = () => {
 
   return (
     <Section bg='dark-cyan'>
-      <Image src={decoImage} alt='decorated image' />
+      <Wrapper>
+        <Image src={decoImage} alt='decorated image' />
+      </Wrapper>
     </Section>
   );
 };

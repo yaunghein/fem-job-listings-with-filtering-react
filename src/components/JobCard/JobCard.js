@@ -12,8 +12,11 @@ import {
   NewJob,
   FeaturedJob,
 } from './JobCard-Styles';
+import { useContext } from 'react';
+import { Context } from '../Context';
 
 const JobCard = ({ job }) => {
+  const { filters, addFilter } = useContext(Context);
   const skills = [job.role, job.level, ...job.languages, ...job.tools];
 
   return (
@@ -22,8 +25,8 @@ const JobCard = ({ job }) => {
         <CompanyLogo src={job.logo} alt={`${job.company} Logo`} />
         <CompanyInfoWrapper>
           <CompanyName>{job.company}</CompanyName>
-          {job.new && <NewJob>New!</NewJob>}
-          {job.featured && <FeaturedJob>Featured</FeaturedJob>}
+          {job.new && <NewJob onClick={() => addFilter('New')}>New!</NewJob>}
+          {job.featured && <FeaturedJob onClick={() => addFilter('Featured')}>Featured</FeaturedJob>}
           <JobTitle>{job.position}</JobTitle>
           <MetaInfoWrapper>
             <MetaInfo>{job.postedAt}</MetaInfo>
@@ -36,7 +39,14 @@ const JobCard = ({ job }) => {
       </Column>
       <Column>
         {skills.map((skill, index) => (
-          <Skill key={index}>{skill}</Skill>
+          <Skill
+            key={index}
+            isAlreadySelected={filters.some(filter => filter.text === skills[index])}
+            onClick={() => {
+              addFilter(skills[index]);
+            }}>
+            {skill}
+          </Skill>
         ))}
       </Column>
     </Wrapper>

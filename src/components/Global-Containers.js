@@ -11,7 +11,6 @@ export const Section = styled.section`
         return 'white';
     }
   }};
-  overflow: hidden;
 `;
 Section.displayName = 'Section';
 
