@@ -51,6 +51,7 @@ export const ClearButton = styled.button`
   color: var(--desaturated-dark-cyan);
   text-decoration: underline;
   font-weight: var(--fw-bold);
+  font-size: 0.9em;
   opacity: 0.5;
   transition: all 0.2s var(--timing-cubic);
 
