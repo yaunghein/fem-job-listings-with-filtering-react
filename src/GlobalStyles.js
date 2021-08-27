@@ -21,13 +21,20 @@ const GlobalStyles = createGlobalStyle`${css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--ff-brand);
   }
 
   html {
-    font-family: var(--ff-brand);
     font-size: 1vw;
     font-weight: var(--fw-normal);
     background: var(--light-grayish-cyan-background);
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari, and Opera */
+    }
 
     @media screen and (max-width: 1000px) {
       font-size: var(---fs-global);

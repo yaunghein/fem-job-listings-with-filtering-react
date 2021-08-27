@@ -34,7 +34,14 @@ export const FilterPillsWrapper = styled.div`
 `;
 FilterPillsWrapper.displayName = 'FilterPillsWrapper';
 
-export const FilterInput = styled.input``;
+export const FilterInput = styled.input`
+  padding: 0.28em 0;
+  border: none;
+  outline: none;
+  font-size: var(--fs-global);
+  color: var(--desaturated-dark-cyan);
+  font-weight: var(--fw-bold);
+`;
 FilterInput.displayName = 'FilterInput';
 
 export const ClearButton = styled.button`
@@ -44,7 +51,7 @@ export const ClearButton = styled.button`
   color: var(--desaturated-dark-cyan);
   text-decoration: underline;
   font-weight: var(--fw-bold);
-  opacity: 0.75;
+  opacity: 0.5;
   transition: all 0.2s var(--timing-cubic);
 
   &:hover {
@@ -52,3 +59,19 @@ export const ClearButton = styled.button`
   }
 `;
 ClearButton.displayName = 'ClearButton';
+
+export const Placeholder = styled.p`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.39em;
+  color: var(--desaturated-dark-cyan);
+  opacity: 0.5;
+  font-size: var(--fs-global);
+  font-weight: var(--fw-bold);
+
+  @media screen and (max-width: 1000px) {
+    left: 0.84em;
+  }
+`;
+Placeholder.displayName = 'Placeholder';
