@@ -14,5 +14,6 @@ Image.displayName = 'Image';
 
 export const Wrapper = styled.div`
   overflow: hidden;
+  background: ${({ theme }) => theme.decoBg};
 `;
 Wrapper.displayName = 'Wrapper';

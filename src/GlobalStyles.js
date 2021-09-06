@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`${css`
   :root {
@@ -27,11 +27,10 @@ const GlobalStyles = createGlobalStyle`${css`
   html {
     font-size: 1vw;
     font-weight: var(--fw-normal);
-    background: var(--light-grayish-cyan-background);
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll;
-
+    background: ${({ theme }) => theme.body};
     &::-webkit-scrollbar {
       display: none; /* for Chrome, Safari, and Opera */
     }

@@ -22,12 +22,13 @@ const fadeUp = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.cardBg};
+
   padding: 2.22em 2.78em;
   border-radius: 0.5em;
   ${FlexCenter}
   margin-bottom: 1.67em;
-  box-shadow: var(--box-shadow);
+  box-shadow: ${({ theme }) => (theme === 'light' ? 'var(--box-shadow)' : 'none')};
   animation: ${fadeUp} 0.2s var(--timing-cubic) forwards;
   border-left: ${({ featured }) => (featured ? '0.35em solid var(--desaturated-dark-cyan)' : null)};
 
@@ -111,7 +112,7 @@ export const CompanyName = styled.h2`
 CompanyName.displayName = 'CompanyName';
 
 export const JobTitle = styled.h3`
-  color: var(--very-dark-grayish-cyan);
+  color: ${({ theme }) => theme.text};
   margin: 0.8em 0 0.6em;
   ${Transition};
   cursor: pointer;
@@ -161,9 +162,8 @@ MetaInfoDot.displayName = 'MetaInfoDot';
 
 export const Skill = styled.button`
   font-size: var(--fs-global);
-  color: ${({ isAlreadySelected }) => (isAlreadySelected ? 'white' : 'var(--desaturated-dark-cyan)')};
-  background: ${({ isAlreadySelected }) =>
-    isAlreadySelected ? 'var(--desaturated-dark-cyan)' : 'var(--light-grayish-cyan-background)'};
+  color: ${({ theme }) => theme.pillText};
+  background: ${({ theme }) => theme.pillBg};
   padding: 0.56em;
   margin-left: 0.56em;
   border-radius: 0.3em;
@@ -175,7 +175,7 @@ export const Skill = styled.button`
 
   :hover {
     color: white;
-    background: var(--desaturated-dark-cyan);
+    background: ${({ theme }) => theme.pillBgDark};
   }
 
   @media screen and (max-width: 1000px) {

@@ -14,8 +14,8 @@ const fadeUp = keyframes`
 export const Wrapper = styled.div`
   width: 100%;
   max-height: 24em;
-  background: white;
-  box-shadow: var(--box-shadow);
+  background: ${({ theme }) => theme.cardBg};
+  box-shadow: ${({ theme }) => (theme === 'light' ? 'var(--box-shadow)' : 'none')};
   border-radius: 0.5em;
   margin-top: -2.22em;
   position: absolute;
@@ -37,11 +37,12 @@ Wrapper.displayName = 'Wrapper';
 export const DropdownItem = styled.p`
   font-size: 0.83em;
   color: var(--desaturated-dark-cyan);
-  background: white;
   padding: 0.56em 1.11em;
   font-weight: var(--fw-normal);
   user-select: none;
   cursor: pointer;
+  transition: padding 0.2s ease-out;
+  border-left: 0.3em solid transparent;
 
   &:first-of-type {
     padding-top: 1.11em;
@@ -51,7 +52,8 @@ export const DropdownItem = styled.p`
   }
 
   &:hover {
-    background: var(--light-grayish-cyan-filter-pill);
+    padding-left: 1.56em;
+    border-color: var(--desaturated-dark-cyan);
   }
 `;
 DropdownItem.displayName = 'DropdownItem';

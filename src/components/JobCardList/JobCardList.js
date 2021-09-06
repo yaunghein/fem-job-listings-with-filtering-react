@@ -7,7 +7,7 @@ import { FilterBox } from '..';
 const JobCardList = () => {
   const { allJobs } = useContext(Context);
   return (
-    <Section bg='cyan'>
+    <Section>
       <Container>
         <FilterBox />
         {allJobs.map(job => job.show && <JobCard key={job.id} job={job} />)}

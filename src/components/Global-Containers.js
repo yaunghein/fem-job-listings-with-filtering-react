@@ -1,16 +1,8 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background: ${({ bg }) => {
-    switch (bg) {
-      case 'cyan':
-        return 'var(--light-grayish-cyan-background)';
-      case 'dark-cyan':
-        return 'var(--desaturated-dark-cyan)';
-      default:
-        return 'white';
-    }
-  }};
+  background: ${({ theme }) => theme.body};
+  transition: all 0.2s ease-out;
 `;
 Section.displayName = 'Section';
 

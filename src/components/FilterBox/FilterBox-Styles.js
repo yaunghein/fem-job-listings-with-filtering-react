@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 5.3em;
-  background: white;
-  box-shadow: var(--box-shadow);
+  background: ${({ theme }) => theme.cardBg};
+  box-shadow: ${({ theme }) => (theme === 'light' ? 'var(--box-shadow)' : 'none')};
   margin-bottom: 2.78em;
   border-radius: 0.5em;
   display: flex;
@@ -41,6 +41,7 @@ export const FilterInput = styled.input`
   font-size: var(--fs-global);
   color: var(--desaturated-dark-cyan);
   font-weight: var(--fw-bold);
+  background: ${({ theme }) => theme.cardBg};
 `;
 FilterInput.displayName = 'FilterInput';
 

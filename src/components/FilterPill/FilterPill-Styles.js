@@ -54,8 +54,8 @@ export const RemoveButton = styled.button`
   border-radius: 0 0.3em 0.3em 0;
 
   &:hover {
-    background: var(--very-dark-grayish-cyan);
-    border-color: var(--very-dark-grayish-cyan);
+    background: ${({ theme }) => theme.pillBgDark};
+    border-color: ${({ theme }) => theme.pillBgDark};
   }
 
   & > img {
